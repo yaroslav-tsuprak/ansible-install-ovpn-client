@@ -1,0 +1,21 @@
+client
+nobind
+comp-lzo
+auth-nocache
+key-direction {{ openvpn.key_direction }}
+reneg-sec {{ openvpn.reneg_sec }}
+
+proto  {{ openvpn.proto }}
+port   {{ openvpn.port }}
+remote {{ openvpn.remote }}
+dev    {{ openvpn.device }}
+remote-cert-tls {{ openvpn.remote_cert_tls }}
+
+<key>
+{{ openvpn.private_key }}</key>
+<cert>
+{{ openvpn.cert }}</cert>
+<ca>
+{{ openvpn.ca }}</ca>
+<tls-auth>
+{{ openvpn.static_key }}</tls-auth>

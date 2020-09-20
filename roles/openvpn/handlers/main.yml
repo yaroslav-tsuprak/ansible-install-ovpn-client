@@ -1,0 +1,3 @@
+---
+- name: restart openvpn
+  systemd: name=openvpn enabled=yes state=restarted

@@ -1,0 +1,12 @@
+---
+- name: install
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: "{{ openvpn.update_cache_time }}"
+  with_items: 
+    - openvpn=openvpn
+    - openssl
+  notify:
+    - restart openvpn
